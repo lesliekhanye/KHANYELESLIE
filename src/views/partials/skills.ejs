@@ -1,0 +1,156 @@
+<style>
+    .skills-section {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .skills-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .skills-tab {
+        padding: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .skills-tab.active {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .skills-content {
+        display: none;
+      }
+
+      .skills-content.active {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .skill-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 0.5rem;
+      }
+</style>
+<section
+        class="skills-section mt-10"
+        style="
+          /* From https://css.glass */
+          background: rgba(0, 3, 84, 0.51);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(8.7px);
+          -webkit-backdrop-filter: blur(8.7px);
+        "
+      >
+        <h2 class="text-center text-5xl pb-8">Skills</h2>
+        <div class="skills-tabs">
+          <div class="skills-tab active" data-tab="frontend">Frontend</div>
+          <div class="skills-tab" data-tab="backend">Backend</div>
+          <div class="skills-tab" data-tab="database">Database</div>
+        </div>
+        <div class="skills-content active" id="frontend">
+          <div class="skill-item">
+            <img src="/images/html.png" alt="HTML" class="skill-icon" />
+            <span>HTML</span>
+          </div>
+          <div class="skill-item">
+            <img src="/images/css.png" alt="CSS" class="skill-icon" />
+            <span>CSS</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="/images/javascript.png"
+              alt="JavaScript"
+              class="skill-icon"
+            />
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <img src="/images/react.png" alt="React.js" class="skill-icon" />
+            <span>React.js</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="/images/bootstrap.png"
+              alt="Bootstrap"
+              class="skill-icon"
+            />
+            <span>Bootstrap</span>
+          </div>
+          <div class="skill-item">
+            <img src="/images/tailwind.png" alt="Tailwind" class="skill-icon" />
+            <span>Tailwind</span>
+          </div>
+        </div>
+        <div class="skills-content" id="backend">
+          <div class="skill-item">
+            <img src="/images/node-js.png" alt="Node.js" class="skill-icon" />
+            <span>Node.js</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="/images/express.png"
+              alt="Express.js"
+              class="skill-icon"
+            />
+            <span>Express.js</span>
+          </div>
+        </div>
+        <div class="skills-content" id="database">
+          <div class="skill-item">
+            <img
+              src="/images/postgre.png"
+              alt="PostgreSQL"
+              class="skill-icon"
+            />
+            <span>PostgreSQL</span>
+          </div>
+        </div>
+      </section>
+      <script>
+        const skillsTabs = document.querySelectorAll(".skills-tab");
+      const skillsContents = document.querySelectorAll(".skills-content");
+
+      skillsTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const tabName = tab.getAttribute("data-tab");
+
+          skillsTabs.forEach((t) => t.classList.remove("active"));
+          skillsContents.forEach((c) => c.classList.remove("active"));
+
+          tab.classList.add("active");
+          document.getElementById(tabName).classList.add("active");
+        });
+      });
+      document.querySelectorAll(".portfolio-item").forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          gsap.to(item, {
+            y: -5,
+            boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)",
+            duration: 0.3,
+          });
+        });
+        item.addEventListener("mouseleave", () => {
+          gsap.to(item, {
+            y: 0,
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            duration: 0.3,
+          });
+        });
+      });
+      </script>

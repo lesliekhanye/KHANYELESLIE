@@ -1,0 +1,18 @@
+{
+    "projects": [
+        {
+            "title": "Mooinooi Community",
+            "image": "/images/mcf.png",
+            "languages": ["HTML", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL"],
+            "description": "A platform created to unify the community of Mooinooi by centralizing information, ensuring everyone has access to essential updates and resources in one convenient location.",
+            "link": "https://mooinooicommunity.com/"
+        },
+        {
+            "title": "MAC-NDOWS",
+            "image": "/images/macndows.png",
+            "languages": ["Node.js", "Express", "PostgreSQL", "CSS", "JavaScript","HTML"],
+            "description": "A web-based operating system inspired by a meme, designed to provide users with a unique, playful interface while offering the functionality of traditional OS platforms like Windows or macOS.",
+              "link":"https://mac-ndows.onrender.com"
+        }
+    ]
+}

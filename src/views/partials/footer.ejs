@@ -1,0 +1,155 @@
+<style>
+    footer {
+        background: rgba(0, 3, 84, 0.2) !important;
+        backdrop-filter: blur(16px) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+</style>
+
+<footer class="py-10 mt-12">
+    <div class="container mx-auto px-4 max-w-xl">
+      <div class="space-y-6">
+        <div class="text-center space-y-1">
+          <h2
+            class="text-2xl font-semibold font-['Space_Grotesk'] tracking-tight"
+          >
+            Let's Connect
+          </h2>
+        </div>
+
+        <form
+          id="contactForm"
+          class="space-y-4 backdrop-blur-lg bg-white/5 p-6 rounded-xl border border-white/10 shadow-xl"
+        >
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <input
+                type="text"
+                required
+                class="w-full p-2.5 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent placeholder-white/30 transition-all text-sm"
+                placeholder="Name"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                required
+                class="w-full p-2.5 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent placeholder-white/30 transition-all text-sm"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+
+          <textarea
+            required
+            class="w-full p-2.5 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent placeholder-white/30 transition-all text-sm min-h-[100px]"
+            placeholder="Your message..."
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full p-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all duration-300 flex items-center justify-center group shadow-lg shadow-blue-500/25 text-sm"
+          >
+            <span id="submitText">Send Message</span>
+            <i
+              class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"
+            ></i>
+          </button>
+        </form>
+
+        <div class="flex justify-center space-x-6">
+          <a
+            href="https://instagram.com/mr.centralbank"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/70 hover:text-white transition-all hover:-translate-y-1 duration-300"
+          >
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/leslie-khanye"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/70 hover:text-white transition-all hover:-translate-y-1 duration-300"
+          >
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a
+            href="https://github.com/lesliekhanye"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/70 hover:text-white transition-all hover:-translate-y-1 duration-300"
+          >
+            <i class="fab fa-github text-xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center text-xs text-white/50">
+        &copy; <span id="currentYear"></span> Leslie Khanye. All rights
+        reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer scripts
+    // Set current year in footer
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Handle form submission
+    const contactForm = document.getElementById("contactForm");
+    const submitText = document.getElementById("submitText");
+
+    contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const submitButton = e.target.querySelector('button[type="submit"]');
+        
+        // Disable button and show loading state
+        submitButton.disabled = true;
+        submitText.textContent = "Sending...";
+
+        const formData = {
+            name: e.target.querySelector('input[type="text"]').value,
+            email: e.target.querySelector('input[type="email"]').value,
+            message: e.target.querySelector('textarea').value
+        };
+
+        try {
+            const response = await fetch('/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                submitText.textContent = "Message sent!";
+                contactForm.reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            submitText.textContent = "Error! Try again";
+        }
+
+        // Reset button state after delay
+        setTimeout(() => {
+            submitText.textContent = "Send Message";
+            submitButton.disabled = false;
+        }, 3000);
+    });
+
+    // Add hover animation to footer items
+    const footerItems = document.querySelectorAll("footer a, footer button");
+    footerItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            gsap.to(item, { y: -2, duration: 0.2 });
+        });
+        item.addEventListener("mouseleave", () => {
+            gsap.to(item, { y: 0, duration: 0.2 });
+        });
+    });
+</script>

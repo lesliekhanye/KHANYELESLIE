@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/82f95f0426.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" href="/images/myicon.png" type="image/png">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Leslie Khanye</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundColor: {
+              "custom-blue": "#000354",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(45px);
+      }
+
+      .pillNav {
+        height: 48px;
+        background-color: rgba(128, 128, 128, 0.271);
+        width: 150px;
+        border-radius: 24px;
+        display: flex;
+        justify-content: space-between;
+        padding: 4px;
+        position: relative;
+        justify-self: center;
+      }
+
+      .activeTabBackground {
+        position: absolute;
+        width: 71px;
+        height: calc(100% - 8px);
+        background-color: rgba(255, 255, 255, 0.196);
+        border-radius: 20px;
+        top: 4px;
+        left: 4px;
+        z-index: 0;
+        transition: left 0.3s ease;
+      }
+
+      .tab {
+        width: 50%;
+        color: white;
+        font-family: "Outfit", sans-serif;
+        font-size: small;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .name-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+
+      .role-text {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      .glowBar {
+        width: 15px;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        bottom: 8px;
+        left: 28px;
+        opacity: 0;
+        box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5);
+        transition: opacity 0.3s ease;
+      }
+
+      .activeTab .glowBar {
+        opacity: 1;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 3, 84, 0.95);
+        z-index: 100;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .mobile-menu.active {
+        display: flex;
+      }
+
+      @media (max-width: 560px) {
+        header {
+          grid-template-rows: auto auto !important;
+          grid-template-columns: 1fr !important;
+          gap: 1rem !important;
+        }
+        
+        .header-content {
+          order: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .pillNav {
+          order: 1;
+          justify-self: center;
+        }
+
+        .cv-section {
+          display: none;
+        }
+
+        #hamburger {
+          display: block;
+          position: absolute;
+          right: 1.5rem;
+          top: 1.5rem;
+        }
+      }
+
+      @media (min-width: 561px) {
+        #hamburger {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="px-6 py-4 grid grid-cols-[1fr_auto_1fr] items-center gap-8 z-50 text-white">
+      <div class="header-content">
+        <span class="block text-xl name-title leading-tight">Leslie Khanye</span>
+        <span class="text-xs role-text">Full Stack Developer</span>
+      </div>
+
+      <div class="pillNav">
+        <div class="activeTabBackground"></div>
+        <div class="tab home activeTab">
+          <a href="/">Home</a>
+          <div class="glowBar"></div>
+        </div>
+        <div class="tab about">
+          <a href="/about">About Me</a>
+          <div class="glowBar"></div>
+        </div>
+      </div>
+
+      <div class="cv-section flex items-center gap-1 justify-self-end role-text">
+        <a href="https://drive.google.com/file/d/1fL5dBTqbkreiJV0Agewm35_JpUZbSpRM/view?usp=sharing">
+          CV
+        </a>
+        
+        <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
+      </div>
+
+      <div class="cursor-pointer" id="hamburger">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="text-xl flex items-center gap-2 role-text">
+       <a href="https://drive.google.com/file/d/1fL5dBTqbkreiJV0Agewm35_JpUZbSpRM/view?usp=sharing">
+          CV
+        </a>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </div>
+      <button id="closeMenu" class="absolute top-6 right-6 text-2xl">
+        ✕
+      </button>
+    </div>
+
+    <script>
+      const tabAbout = document.querySelector(".about");
+      const tabHome = document.querySelector(".home");
+      const activeTabBackground = document.querySelector(".activeTabBackground");
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const closeMenu = document.getElementById('closeMenu');
+
+      // Update the active tab based on the current path
+      function updateActiveTab() {
+        const currentPath = window.location.pathname;
+
+        if (currentPath.includes("/about")) {
+          tabAbout.classList.add("activeTab");
+          tabHome.classList.remove("activeTab");
+          gsap.to(activeTabBackground, { left: "calc(50% + 0px)", duration: 0.3 });
+        } else {
+          tabHome.classList.add("activeTab");
+          tabAbout.classList.remove("activeTab");
+          gsap.to(activeTabBackground, { left: "4px", duration: 0.3 });
+        }
+      }
+
+      // Mobile menu functionality
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+      });
+
+      closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+
+      // Call the function to update the active tab when the page loads
+      updateActiveTab();
+    </script>
+  </body>
+</html>

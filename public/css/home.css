@@ -1,0 +1,80 @@
+body{
+background-image: url('../images/starrysky.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+color: white;
+}
+
+.tagline {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.4;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .content-section {
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .imagination {
+    display: inline-block;
+    color: #64ffda;
+    font-weight: 500;
+    font-family: "Outfit", sans-serif;
+  }
+
+  .reality {
+    display: inline-block;
+    color: #ff64b1;
+    font-weight: 500;
+    font-family: "Outfit", sans-serif;
+    position: relative;
+  }
+  .star {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-container img {
+    max-width: 100%;
+  }
+
+  /* Adjust main-content to accommodate the image */
+  .main-content {
+    padding-top: 0;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .image-container {
+      padding: 1rem 0;
+    }
+    .image-container img {
+      width: 150px; /* Adjust as needed for mobile */
+    }
+  }
