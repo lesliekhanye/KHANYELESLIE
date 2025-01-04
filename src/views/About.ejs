@@ -1,87 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Leslie Khanye</title>
-    <script src="https://kit.fontawesome.com/82f95f0426.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/82f95f0426.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.tailwindcss.com"></script>
-<link rel="icon" href="/images/myicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/myicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            background-image: url('/images/image.png');
-            background-size: cover;
-            color: white;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
-            box-sizing: border-box;
-            
-        }
-        .skill-card {
-        
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-        }
-        .info{
-            /* From https://css.glass */
-/* From https://css.glass */
-/* From https://css.glass */
-background: rgba(0, 0, 0, 0.39);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(3.8px);
--webkit-backdrop-filter: blur(3.8px);
-padding: 50px;
-
-        }
+      body {
+        background-image: url("/images/dust.png");
+        background-size: cover;
+        color: white;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .skill-card {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+      }
+      .info {
+        /* From https://css.glass */
+        /* From https://css.glass */
+        /* From https://css.glass */
+        background: rgba(0, 0, 0, 0.39);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.8px);
+        -webkit-backdrop-filter: blur(3.8px);
+        padding: 50px;
+      }
     </style>
-</head>
-<body class="min-h-screen">
-    <%- include('partials/loader.ejs') %>
-    <%- include('partials/header.ejs') %>
-   
-    <div class="hero-section">
-        <div>
-            <img src="/images/myicon.png" alt="" width="250" class="ml-auto mr-auto mb-0 pb-0">
-        </div>
-        <main class="container mx-auto px-4 py-5">
-            <h1 class="text-4xl font-bold mb-6 text-center mt-0 pb-0">About Me</h1>
-            <div class="max-w-3xl mx-auto space-y-6 info text-l">
-                <p>
-                    Hi, I'm Leslie Khanye, a passionate Full Stack Developer dedicated to solving problems and crafting seamless digital experiences. Outside of coding, I'm an avid chess player, MMA enthusiast, and fitness advocate.
-                </p>
-                <p>
-                    For me, the link between these pursuits is unmistakable: chess hones strategic thinking, MMA instills discipline and resilience, and fitness strengthens the body to support the mind. Each parallels programming in its demand for focus, adaptability, and the ability to anticipate and tackle challenges.
-                </p>
-                <p>
-                    I bring this mindset into development—thinking steps ahead, dissecting complex problems, and building solutions that are efficient and impactful. Whether it's designing robust backend architecture or creating dynamic user interfaces, I combine logic with creativity to deliver meaningful results in every project.
-                </p>
-            </div>
+  </head>
+  <body class="min-h-screen">
+    <%- include('partials/loader.ejs') %> <%- include('partials/header.ejs') %>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div class="skill-card p-6 text-center">
-                    <i class="fas fa-chess-knight text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Strategic Thinking</h3>
-                    <p>Chess player</p>
-                </div>
-                <div class="skill-card p-6 text-center">
-                    <i class="fas fa-dumbbell text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Discipline & Resilience</h3>
-                    <p>MMA & Fitness enthusiast</p>
-                </div>
-                <div class="skill-card p-6 text-center">
-                    <i class="fas fa-code text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
-                    <p>Full Stack Developer</p>
-                </div>
-            </div>
-        </main>
+    <div class="hero-section">
+      <div>
+        <img
+          src="/images/myicon.png"
+          alt=""
+          width="250"
+          class="ml-auto mr-auto mb-0 pb-0"
+        />
+      </div>
+      <main class="container mx-auto px-4 py-5">
+        <h1 class="text-4xl font-bold mb-6 text-center mt-0 pb-0">About Me</h1>
+        <div class="max-w-3xl mx-auto space-y-6 info text-l">
+          <p>
+            Hi, I'm Leslie Khanye, a passionate Full Stack Developer dedicated
+            to solving problems and crafting seamless digital experiences.
+            Outside of coding, I'm an avid chess player, MMA enthusiast, and
+            fitness advocate.
+          </p>
+          <p>
+            For me, the link between these pursuits is unmistakable: chess hones
+            strategic thinking, MMA instills discipline and resilience, and
+            fitness strengthens the body to support the mind. Each parallels
+            programming in its demand for focus, adaptability, and the ability
+            to anticipate and tackle challenges.
+          </p>
+          <p>
+            I bring this mindset into development—thinking steps ahead,
+            dissecting complex problems, and building solutions that are
+            efficient and impactful. Whether it's designing robust backend
+            architecture or creating dynamic user interfaces, I combine logic
+            with creativity to deliver meaningful results in every project.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div class="skill-card p-6 text-center">
+            <i class="fas fa-chess-knight text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Strategic Thinking</h3>
+            <p>Chess player</p>
+          </div>
+          <div class="skill-card p-6 text-center">
+            <i class="fas fa-dumbbell text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Discipline & Resilience</h3>
+            <p>MMA & Fitness enthusiast</p>
+          </div>
+          <div class="skill-card p-6 text-center">
+            <i class="fas fa-code text-4xl mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
+            <p>Full Stack Developer</p>
+          </div>
+        </div>
+      </main>
     </div>
-</body>
+  </body>
 </html>

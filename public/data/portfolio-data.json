@@ -1,18 +1,60 @@
 {
-    "projects": [
-        {
-            "title": "Mooinooi Community",
-            "image": "/images/mcf.png",
-            "languages": ["HTML", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL"],
-            "description": "A platform created to unify the community of Mooinooi by centralizing information, ensuring everyone has access to essential updates and resources in one convenient location.",
-            "link": "https://mooinooicommunity.com/"
-        },
-        {
-            "title": "MAC-NDOWS",
-            "image": "/images/macndows.png",
-            "languages": ["Node.js", "Express", "PostgreSQL", "CSS", "JavaScript","HTML"],
-            "description": "A web-based operating system inspired by a meme, designed to provide users with a unique, playful interface while offering the functionality of traditional OS platforms like Windows or macOS.",
-              "link":"https://mac-ndows.onrender.com"
-        }
-    ]
+  "projects": [
+    {
+      "title": "Mooinooi Community",
+      "image": "/images/mcf.png",
+      "languages": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL"
+      ],
+      "description": "A platform created to unify the community of Mooinooi by centralizing information, ensuring everyone has access to essential updates and resources in one convenient location.",
+      "link": "https://mooinooicommunity.com/"
+    },
+    {
+      "title": "MAC-NDOWS",
+      "image": "/images/macndows.png",
+      "languages": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "CSS",
+        "JavaScript",
+        "HTML"
+      ],
+      "description": "A web-based operating system inspired by a meme, designed to provide users with a unique, playful interface while offering the functionality of traditional OS platforms like Windows or macOS.",
+      "link": "https://mac-ndows.onrender.com"
+    },
+    {
+      "title": "CBGG GUESS GAME",
+      "image": "/images/CBGG.png",
+      "languages": [
+        "TAILWIND CSS",
+        "JavaScript",
+        "HTML",
+        "TAILWIND CSS",
+        "JavaScript",
+        "HTML"
+      ],
+      "description": "A web-based operating system inspired by a meme, designed to provide users with a unique, playful interface while offering the functionality of traditional OS platforms like Windows or macOS.",
+      "link": "https://lesliekhanye.github.io/CBGGGUESSGAME/"
+    },
+    {
+      "title": "LTMK BANK",
+      "image": "/images/ltmk.png",
+      "languages": [
+        "TAILWIND CSS",
+        "JavaScript",
+        "HTML",
+        "TAILWIND CSS",
+        "JavaScript",
+        "HTML"
+      ],
+      "description": "A secure and user-friendly banking web app designed to simplify financial management, offering seamless transactions, account tracking, and personalized services to enhance the banking experience.",
+      "link": "https://lesliekhanye.github.io/LTMKBANK/"
+    }
+  ]
 }
